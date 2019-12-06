@@ -144,5 +144,10 @@ USE_TZ = False
 STATIC_URL = '/static/'
 STATIC_ROOT = 'static'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media').replace('\\', '/') # media即為圖片上傳的根路徑
-MEDIA_URL = '/media/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media').replace('\\', '/') # media即為圖片上傳的根路徑
+# MEDIA_URL = '/media/'
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+AWS_ACCESS_KEY_ID = 'AKIAIYZJVWWRY5HN27IQ'
+AWS_SECRET_ACCESS_KEY = 'U1gMds6duwjojN0xitCKK4hHOP18x6nRQNb5zdrH'
+AWS_STORAGE_BUCKET_NAME = 'reminiscencesimg'
