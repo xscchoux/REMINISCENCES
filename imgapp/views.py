@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 @login_required
-def uploadImg(request):   # 圖片上傳函數
+def uploadImg(request):   # upload images
     if request.method == 'POST':
         img = Img(img_url=request.FILES.get('img'))
         img.save()
@@ -16,7 +16,7 @@ def uploadImg(request):   # 圖片上傳函數
     return render(request, 'imgupload.html')
 
 def showImg(request):
-    imgs = Img.objects.all() # 从数据库中取出所有的图片路径
+    imgs = Img.objects.all() # get images (directory) from databases
     context = {
         'imgs' : imgs
     }
