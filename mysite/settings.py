@@ -82,38 +82,28 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 #         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 #     }
 # }
-if 'E6770' in os.environ:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.mysql',
-            'NAME': 'E6770',
-            'USER': 'sc4400',
-            'PASSWORD': 'Ccou4645#',
-            'HOST': 'db-django.c1saaizp8z6b.us-east-1.rds.amazonaws.com',
-            'PORT': '3306',
-        }
+# if 'db-django.c1saaizp8z6b.us-east-1.rds.amazonaws.com' in os.environ:
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'E6770',
+        'USER': 'sc4400',
+        'PASSWORD': 'Ccou4645#',
+        'HOST': 'db-django.c1saaizp8z6b.us-east-1.rds.amazonaws.com',
+        'PORT': '3306',
     }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.mysql',
-            'NAME': 'mysite',
-            'USER': 'root',
-            'PASSWORD': 'root',
-            'HOST': '127.0.0.1',
-            'PORT': '3306',
-        }
-    }
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'mysite',
-#         'USER': 'root',
-#         'PASSWORD': 'root',
-#         'HOST': '127.0.0.1',
-#         'PORT': '3306',
+}
+# else:
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.mysql',
+#             'NAME': 'mysite',
+#             'USER': 'root',
+#             'PASSWORD': 'root',
+#             'HOST': '127.0.0.1',
+#             'PORT': '3306',
+#         }
 #     }
-# }
 
 
 # Password validation
