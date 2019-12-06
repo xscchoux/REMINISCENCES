@@ -24,7 +24,7 @@ SECRET_KEY = 'u(hv^i(3cp_xic8eq&&ar%_8ees5jiu44(qo47u=t8(089ei%m'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['django-env.qqne9rcd3c.us-east-1.elasticbeanstalk.com']
+ALLOWED_HOSTS = ['django-env.qqne9rcd3c.us-east-1.elasticbeanstalk.com','127.0.0.1']
 
 
 # Application definition
@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'blog.apps.BlogConfig',
     'wiki.apps.WikiConfig',
-    'taggit'
+    'taggit',
+    'imgapp'
 ]
 
 MIDDLEWARE = [
@@ -81,28 +82,28 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 #         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 #     }
 # }
-# if 'db-django.c1saaizp8z6b.us-east-1.rds.amazonaws.com' in os.environ:
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'E6770',
-        'USER': 'sc4400',
-        'PASSWORD': 'Ccou4645#',
-        'HOST': 'db-django.c1saaizp8z6b.us-east-1.rds.amazonaws.com',
-        'PORT': '3306',
+if 'E6770' in os.environ:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'E6770',
+            'USER': 'sc4400',
+            'PASSWORD': 'Ccou4645#',
+            'HOST': 'db-django.c1saaizp8z6b.us-east-1.rds.amazonaws.com',
+            'PORT': '3306',
+        }
     }
-}
-# else:
-#     DATABASES = {
-#         'default': {
-#             'ENGINE': 'django.db.backends.mysql',
-#             'NAME': 'mysite',
-#             'USER': 'root',
-#             'PASSWORD': 'root',
-#             'HOST': '127.0.0.1',
-#             'PORT': '3306',
-#         }
-#     }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'mysite',
+            'USER': 'root',
+            'PASSWORD': 'root',
+            'HOST': '127.0.0.1',
+            'PORT': '3306',
+        }
+    }
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.mysql',
@@ -153,3 +154,6 @@ USE_TZ = False
 
 STATIC_URL = '/static/'
 STATIC_ROOT = 'static'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media').replace('\\', '/') # media即為圖片上傳的根路徑
+MEDIA_URL = '/media/'
