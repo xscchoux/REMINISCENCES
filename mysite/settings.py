@@ -37,7 +37,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog.apps.BlogConfig',
-    'wiki.apps.WikiConfig',
     'taggit',
     'imgapp'
 ]
