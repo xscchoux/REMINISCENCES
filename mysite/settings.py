@@ -23,6 +23,7 @@ SECRET_KEY = 'u(hv^i(3cp_xic8eq&&ar%_8ees5jiu44(qo47u=t8(089ei%m'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
+# DEBUG404 = True
 
 ALLOWED_HOSTS = ['django-env.qqne9rcd3c.us-east-1.elasticbeanstalk.com','127.0.0.1']
 
@@ -81,6 +82,7 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 #     }
 # }
 # if 'db-django.c1saaizp8z6b.us-east-1.rds.amazonaws.com' in os.environ:
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -92,6 +94,7 @@ DATABASES = {
         'PORT': '3306',
     }
 }
+
 # else:
 # DATABASES = {
 #     'default': {
@@ -144,5 +147,5 @@ USE_TZ = False
 STATIC_URL = '/static/'
 STATIC_ROOT = 'static'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media').replace('\\', '/') # media即為圖片上傳的根路徑
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media').replace('\\', '/') # media 即為圖片上傳的根路徑
 MEDIA_URL = '/media/'

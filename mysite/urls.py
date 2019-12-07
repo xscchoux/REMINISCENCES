@@ -19,6 +19,10 @@ from django.urls import path, include
 from imgapp.views import *
 from django.conf.urls.static import static
 from django.conf import settings
+import os
+from django.views.static import serve as serveview
+from django.conf.urls import url
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,4 +30,7 @@ urlpatterns = [
     path('uploadImg/', uploadImg),
     path('showImg/', showImg),
     path('success', success, name='success')
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] 
+
+if True:
+    urlpatterns += [url(r'^media/(?P<path>.*)$', serveview,{'document_root': settings.MEDIA_ROOT}), url(r'^static/(?P<path>.*)$', serveview,{'document_root': settings.STATIC_ROOT}),]
