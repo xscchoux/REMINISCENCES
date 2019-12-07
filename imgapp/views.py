@@ -6,7 +6,7 @@ from django.http import HttpResponse
 # Create your views here.
 
 @login_required
-def uploadImg(request):   # 圖片上傳函數
+def uploadImg(request):   # upload images
     if request.method == 'POST':
         form = ImgForm(request.POST, request.FILES)
         if form.is_valid():
@@ -21,7 +21,7 @@ def success(request):
 
 def showImg(request):
     if request.method == 'GET':
-        imgs = Img.objects.all() # 从数据库中取出所有的图片路径
+        imgs = Img.objects.all() # get the URLs of all images in the database
         context = {'images' : imgs}
     return render(request, 'showImg.html', context)
 
