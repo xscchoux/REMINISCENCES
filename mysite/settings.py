@@ -88,9 +88,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'E6770',
         'OPTIONS': {'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",},
-        'USER': 'sc4400',
-        'PASSWORD': 'Ccou4645#',
-        'HOST': 'db-django.c1saaizp8z6b.us-east-1.rds.amazonaws.com',
+        'USER': 'your user name',
+        'PASSWORD': 'your RDS password',
+        'HOST': 'your host name',
         'PORT': '3306',
     }
 }
