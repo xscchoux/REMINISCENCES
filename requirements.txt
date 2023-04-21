@@ -4,4 +4,4 @@ django-storages==1.8
 django-taggit==1.1.0
 mysqlclient==1.4.4
 pytz==2019.3
-sqlparse==0.3.0
+sqlparse==0.4.4
